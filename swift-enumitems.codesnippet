@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>swift-enum-items</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>extension RawRepresentable where RawValue == Int {
+
+    static var itemsCount: Int {
+        var index = 0
+        while Self(rawValue: index) != nil { index += 1 }
+        return index
+    }
+
+    static var items: [Self] {
+        var items: [Self] = []
+        var index = 0
+        while let item = Self(rawValue: index) {
+            items.append(item)
+            index += 1
+        }
+        return items
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>9F677A21-2459-44FB-9B19-05F66135DA18</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>swift-enum-items</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift Raw Representable</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

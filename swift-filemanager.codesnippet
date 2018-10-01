@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>swift-filemanager</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>extension FileManager {
+
+    static var documentsDirectory: URL {
+        return FileManager
+            .default
+            .urls(for: .documentDirectory, in: .userDomainMask)
+            .last!
+    }
+}
+
+extension String {
+
+    var fileName: String {
+        return "your_app_unique_prefix_"
+            + self
+            + ".json"
+    }
+
+    var fileURL: URL {
+        return FileManager
+            .documentsDirectory
+            .appendingPathComponent(fileName)
+    }
+}
+
+extension URL {
+
+    var fileContent: Data? {
+        return FileManager
+            .default
+            .contents(atPath: path)
+    }
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D1352A90-310B-44FE-9CD4-2F99FC48E364</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift FileManager</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

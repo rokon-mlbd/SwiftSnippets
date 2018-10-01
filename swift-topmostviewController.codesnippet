@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>swift-topmost-viewcontroller</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>extension UIViewController {
+    func topMostViewController(controller: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -&gt; UIViewController? {
+        if let navigationController = controller as? UINavigationController {
+            return topMostViewController(controller: navigationController.visibleViewController)
+        }
+        if let tabController = controller as? UITabBarController {
+            if let selected = tabController.selectedViewController {
+                return topMostViewController(controller: selected)
+            }
+        }
+        if let presented = controller?.presentedViewController {
+            return topMostViewController(controller: presented)
+        }
+        return controller
+    }
+}
+
+extension UIApplication {
+    func topMostViewController() -&gt; UIViewController? {
+        return self.keyWindow?.rootViewController?.topMostViewController()
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>E23E3896-513C-46DB-872A-09312F2CD261</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift Top Most ViewController</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>swift-array-remove</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>extension Array  {
+
+    // it removes the first element that matches the handler condition on the array itself
+    public mutating func remove(_ handler: (Element) -&gt; Bool) -&gt; Element? {
+        guard let idx = index(where: handler) else { return nil }
+        let item = self[idx]
+        remove(at: idx)
+        return item
+    }
+
+    // it removes the first element that matches the handler condition &amp; returns a new array
+    public func removed(_ handler: (Element) -&gt; Bool) -&gt; Array {
+        var items = self
+        _ = items.remove(handler)
+        return items
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>6BBE3179-9E05-488A-BE66-B15A288D9E5F</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift Array Remove Item</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
